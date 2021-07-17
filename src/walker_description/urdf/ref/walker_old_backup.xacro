@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="walker" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+       <robotNamespace>/walker</robotNamespace>
+       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+
+
+  <gazebo reference="body">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="right_hip">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="left_hip">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="right_carriage">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="left_carriage">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="right_leg">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="left_leg">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+
+  <!-- Import Rviz colors -->
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+
+
+
+
+  <link
+    name="base_link">
+    <origin 
+      xyz="0 0 0"
+      rpy="0 0 0"/>
+  </link>
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="0.06218 0.17039 0.15539"
+        rpy="0 0 0" />
+      <mass
+        value="1.2001" />
+      <inertia
+        ixx="0.001773"
+        ixy="5.1379E-08"
+        ixz="-1.7115E-08"
+        iyy="0.0013253"
+        iyz="-1.7617E-05"
+        izz="0.0020448" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/body.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/body_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="floating_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="body" />
+  </joint>
+  <link
+    name="left_hip">
+    <inertial>
+      <origin
+        xyz="-0.083076 0.00066048 -0.037806"
+        rpy="0 0 0" />
+      <mass
+        value="0.36941" />
+      <inertia
+        ixx="0.00036804"
+        ixy="1.9388E-07"
+        ixz="-3.6124E-05"
+        iyy="0.00017982"
+        iyz="-3.2417E-06"
+        izz="0.00041443" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/left_hip.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/left_hip_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.14225 -0.062586 0.047447"
+      rpy="-1.4815 0.057079 1.0742" />
+    <parent
+      link="body" />
+    <child
+      link="left_hip" />
+    <axis
+      xyz="0.87778 -0.0074863 0.479" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="50"
+      velocity="20" />
+    <dynamics
+      damping="0.05"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-0.5"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_carriage">
+    <inertial>
+      <origin
+        xyz="0.025979 9.6971E-06 -0.047608"
+        rpy="0 0 0" />
+      <mass
+        value="0.26282" />
+      <inertia
+        ixx="0.00028791"
+        ixy="9.4318E-09"
+        ixz="-2.3778E-05"
+        iyy="0.00013775"
+        iyz="3.1317E-09"
+        izz="0.00031848" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/left_carriage.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/carriage_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_carriage_joint"
+    type="continuous">
+    <origin
+      xyz="-0.08921 0.00076084 -0.048681"
+      rpy="0.048821 0.99788 -3.052" />
+    <parent
+      link="left_hip" />
+    <child
+      link="left_carriage" />
+    <axis
+      xyz="0.47901 0 -0.87781" />
+    <limit
+      effort="50"
+      velocity="20" />
+    <dynamics
+      damping="0.05"
+      friction="0.05" />
+    <safety_controller
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="left_leg">
+    <inertial>
+      <origin
+        xyz="-0.0028732 -0.024853 0.0017328"
+        rpy="0 0 0" />
+      <mass
+        value="0.18914" />
+      <inertia
+        ixx="0.0023785"
+        ixy="7.43E-07"
+        ixz="3.8842E-06"
+        iyy="3.9163E-05"
+        iyz="1.2321E-06"
+        izz="0.0023826" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/left_leg.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/leg_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_sliding_joint"
+    type="prismatic">
+    <origin
+      xyz="0.036657 0 -0.067174"
+      rpy="0 0.30039 0" />
+    <parent
+      link="left_carriage" />
+    <child
+      link="left_leg" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.15"
+      upper="0.20"
+      effort="50"
+      velocity="50" />
+    <dynamics
+      damping="0.1"
+      friction="0.2" />
+    <safety_controller
+      soft_upper="0.19"
+      soft_lower="-0.14"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_hip">
+    <inertial>
+      <origin
+        xyz="0.06218 0.17039 0.15539"
+        rpy="0 0 0" />
+      <mass
+        value="0.36941" />
+      <inertia
+        ixx="0.001773"
+        ixy="5.1379E-08"
+        ixz="-1.7115E-08"
+        iyy="0.0013253"
+        iyz="-1.7617E-05"
+        izz="0.0020448" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/right_hip.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/right_hip_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.017748 -0.078624 0.047447"
+      rpy="-1.4756 0.0603 -2.067" />
+    <parent
+      link="body" />
+    <child
+      link="right_hip" />
+    <axis
+      xyz="0.87778 -0.0074863 0.479" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="50"
+      velocity="20" />
+    <dynamics
+      damping="0.05"
+      friction="0.1" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-0.5"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_carriage">
+    <inertial>
+      <origin
+        xyz="0.025979 9.6969E-06 -0.047608"
+        rpy="0 0 0" />
+      <mass
+        value="0.26282" />
+      <inertia
+        ixx="0.00028791"
+        ixy="9.4323E-09"
+        ixz="-2.3778E-05"
+        iyy="0.00013775"
+        iyz="3.1329E-09"
+        izz="0.00031848" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/right_carriage.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/carriage_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_carriage_joint"
+    type="continuous">
+    <origin
+      xyz="0.066354 -0.00056591 0.036209"
+      rpy="-0.04304 0.99814 3.0627" />
+    <parent
+      link="right_hip" />
+    <child
+      link="right_carriage" />
+    <axis
+      xyz="0.47901 0 -0.87781" />
+    <limit
+      effort="50"
+      velocity="20" />
+    <dynamics
+      damping="0.05"
+      friction="0.05" />
+    <safety_controller
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="right_leg">
+    <inertial>
+      <origin
+        xyz="-0.0028732 -0.029674 0.0017328"
+        rpy="0 0 0" />
+      <mass
+        value="0.18914" />
+      <inertia
+        ixx="0.0023785"
+        ixy="7.4298E-07"
+        ixz="3.8842E-06"
+        iyy="3.9163E-05"
+        iyz="1.2321E-06"
+        izz="0.0023826" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/visual/right_leg.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://walker_description/meshes/collision/leg_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_sliding_joint"
+    type="prismatic">
+    <origin
+      xyz="0.036657 0 -0.067174"
+      rpy="0 0.30039 0" />
+    <parent
+      link="right_carriage" />
+    <child
+      link="right_leg" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.15"
+      upper="0.20"
+      effort="50"
+      velocity="50" />
+    <dynamics
+      damping="0.1"
+      friction="0.2" />
+    <safety_controller
+      soft_upper="0.19"
+      soft_lower="-0.14"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+
+
+
+
+  <transmission name="left_hip_joint_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="left_hip_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="left_hip_joint_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+
+  </transmission>
+
+  <transmission name="right_hip_joint_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="right_hip_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="right_hip_joint_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+
+  </transmission>
+
+
+
+
+
+</robot>

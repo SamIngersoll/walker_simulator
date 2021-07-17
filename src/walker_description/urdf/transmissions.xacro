@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+
+<!-- HIPS -->
+<transmission name="left_hip_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="left_hip_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="left_hip_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${hip_reduction}"</mechanicalReduction>
+       </actuator>
+
+  </transmission>
+
+  <transmission name="right_hip_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="right_hip_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="right_hip_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${hip_reduction}"</mechanicalReduction>
+       </actuator>
+  </transmission>
+
+<!-- CARRIAGES -->
+<transmission name="left_carriage_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="left_carriage_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="left_carriage_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${carriage_reduction}"</mechanicalReduction>
+       </actuator>
+
+  </transmission>
+
+  <transmission name="right_carriage_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="right_carriage_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="right_carriage_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${carriage_reduction}"</mechanicalReduction>
+       </actuator>
+  </transmission>
+
+  <!-- LEGS -->
+<transmission name="left_leg_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="left_leg_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="left_leg_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${leg_reduction}"</mechanicalReduction>
+       </actuator>
+
+  </transmission>
+
+  <transmission name="right_leg_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="right_leg_joint">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="right_leg_motor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+         <mechanicalReduction>"${leg_reduction}"</mechanicalReduction>
+       </actuator>
+  </transmission>
+
+</robot>

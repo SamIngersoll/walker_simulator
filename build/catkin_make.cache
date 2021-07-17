@@ -1,0 +1,2 @@
+walker_control:walker_description:walker_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/sam/walker_simulator/devel -DCMAKE_INSTALL_PREFIX=/home/sam/walker_simulator/install -G Unix Makefiles
