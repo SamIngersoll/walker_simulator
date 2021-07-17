@@ -19,4 +19,6 @@
     <remap from="/joint_states" to="/walker/joint_states" />
   </node>
 
+  <node name="publisher" pkg="walker_control" type="publisher"/>
+
 </launch>

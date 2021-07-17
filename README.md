@@ -1,4 +1,4 @@
-## Robot Simulator
+# Robot Simulator
 
 Make sure you have ros neotic and ros-control installed.
 
