@@ -10,31 +10,37 @@ walker:
   left_hip_position_controller:
     type: effort_controllers/JointPositionController
     joint: left_hip_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}
 
   right_hip_position_controller:
     type: effort_controllers/JointPositionController
     joint: right_hip_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}
 
   # CARRIAGES
   left_carriage_position_controller:
     type: effort_controllers/JointPositionController
     joint: left_carriage_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}
 
   right_carriage_position_controller:
     type: effort_controllers/JointPositionController
     joint: right_carriage_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}
 
   # LEGS
   left_leg_position_controller:
     type: effort_controllers/JointPositionController
     joint: left_leg_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}
 
   right_leg_position_controller:
     type: effort_controllers/JointPositionController
     joint: right_leg_joint
-    pid: {p: 10.0, i: 0.1, d: 1.0}
+    # pid: {p: 50.0, i: 0.1, d: 1.0}
+    pid: {p: 50.0, i: 0.0, d: 1.0}

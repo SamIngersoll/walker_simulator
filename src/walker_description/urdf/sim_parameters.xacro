@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+    <!-- Constants for robot behavior -->
+    <!-- when applicable, right is positive and left is negative.
+            these are defined w.r.t the right leg -->
+
+    <!-- ODE -->
+    <xacro:property name="ode_mu" value=".5"/>            <!-- [] -->
+    <xacro:property name="ode_min_depth" value="0.1"/>     <!-- m -->
+    <xacro:property name="ode_kp" value="1e7"/>            <!-- N/m -->
+  </robot>

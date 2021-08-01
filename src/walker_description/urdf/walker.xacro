@@ -9,6 +9,8 @@
   <xacro:include filename="$(find walker_description)/urdf/gazebo_specific.gazebo" />
   <!-- Import joint behavior parameters -->
   <xacro:include filename="$(find walker_description)/urdf/joint_descriptions.xacro" />
+  <!-- Import sim behavior parameters -->
+  <xacro:include filename="$(find walker_description)/urdf/sim_parameters.xacro" />
   <!-- Import transmission file-->
   <xacro:include filename="$(find walker_description)/urdf/transmissions.xacro" />
 
@@ -20,9 +22,23 @@
   </link>
   <link
     name="body">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <max_vel>0</max_vel>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
-        xyz="0.06218 0.17039 0.15539"
+        xyz="0.06 -0.16 0.18"
         rpy="0 0 0" />
       <mass
         value="1.2001" />
@@ -71,6 +87,19 @@
   </joint>
   <link
     name="left_hip">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
         xyz="-0.083076 0.00066048 -0.037806"
@@ -132,6 +161,19 @@
   </joint>
   <link
     name="left_carriage">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
         xyz="0.025979 9.6971E-06 -0.047608"
@@ -191,6 +233,19 @@
   </joint>
   <link
     name="left_leg">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
         xyz="-0.0028732 -0.024853 0.0017328"
@@ -252,10 +307,26 @@
   </joint>
   <link
     name="right_hip">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
-        xyz="0.06218 0.17039 0.15539"
+        xyz="0.07 0 0.03"
         rpy="0 0 0" />
+      <!-- <origin
+        xyz="0.06218 0.17039 0.15539"
+        rpy="0 0 0" /> -->
       <mass
         value="0.36941" />
       <inertia
@@ -313,6 +384,19 @@
   </joint>
   <link
     name="right_carriage">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
         xyz="0.025979 9.6969E-06 -0.047608"
@@ -372,6 +456,19 @@
   </joint>
   <link
     name="right_leg">
+    <surface>
+      <friction>
+        <ode>
+          <mu>"${ode_mu}"</mu>
+        </ode>
+      </friction>
+      <contact>
+        <ode>
+          <min_depth>"${ode_min_depth}"</min_depth>
+          <kp>"${ode_kp}"</kp>
+        </ode>
+      </contact>
+    </surface>
     <inertial>
       <origin
         xyz="-0.0028732 -0.029674 0.0017328"

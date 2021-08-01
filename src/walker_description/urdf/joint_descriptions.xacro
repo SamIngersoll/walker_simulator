@@ -11,7 +11,7 @@
   <xacro:property name="hip_joint_damping" value="0.05"/>     <!-- Nm/(rad/s) -->
   <xacro:property name="hip_joint_friction" value="0.2"/>     <!-- Nm -->
   <xacro:property name="hip_joint_max_velocity" value="10"/>  <!-- rad/s -->
-  <xacro:property name="hip_joint_max_effort" value="30"/>    <!-- Nm -->
+  <xacro:property name="hip_joint_max_effort" value="40"/>    <!-- Nm -->
   <xacro:property name="hip_joint_positive_joint_limit" value="1"/>   <!-- rad -->
   <xacro:property name="hip_joint_negative_joint_limit" value="-1"/>  <!-- rad -->
 
@@ -19,14 +19,14 @@
   <xacro:property name="carriage_joint_damping" value="0.05"/>     <!-- Nm/(rad/s) -->
   <xacro:property name="carriage_joint_friction" value="0.2"/>     <!-- Nm -->
   <xacro:property name="carriage_joint_max_velocity" value="10"/>  <!-- rad/s -->
-  <xacro:property name="carriage_joint_max_effort" value="30"/>    <!-- Nm -->
+  <xacro:property name="carriage_joint_max_effort" value="40"/>    <!-- Nm -->
   <!-- carriage joint is continuous, so no position joint limits -->
 
   <!-- leg joint -->
   <xacro:property name="leg_joint_damping" value="0.05"/>     <!-- N/(m/s) -->
   <xacro:property name="leg_joint_friction" value="0.2"/>     <!-- N -->
   <xacro:property name="leg_joint_max_velocity" value="10"/>  <!-- m/s -->
-  <xacro:property name="leg_joint_max_effort" value="30"/>    <!-- N -->
+  <xacro:property name="leg_joint_max_effort" value="100"/>    <!-- N -->
   <xacro:property name="leg_joint_positive_joint_limit" value="0.2"/>   <!-- m -->
   <xacro:property name="leg_joint_negative_joint_limit" value="-0.15"/>  <!-- m -->
 
